@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Not Found component for the metrics page
 export default function MetricsNotFound() {
   return (
     <main className="max-w-3xl mx-auto p-6">

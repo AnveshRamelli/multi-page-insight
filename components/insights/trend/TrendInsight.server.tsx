@@ -2,6 +2,7 @@ import { getMetricTrend } from "@/data/resolvers";
 import { MetricKey, MetricTrendPoint, TimeGrain } from "@/data/types";
 import TrendInsight from "./TrendInsight";
 
+// Data type for the TrendInsightServer component props
 interface Props {
   metric: MetricKey;
   grain: TimeGrain;
@@ -10,6 +11,7 @@ interface Props {
   title: string;
 }
 
+// Server component to fetch data and render TrendInsight
 export default async function TrendInsightServer({
   metric,
   grain,

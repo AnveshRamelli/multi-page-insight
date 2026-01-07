@@ -11,6 +11,7 @@ import {
   Area,
 } from "recharts";
 
+// TrendChart component to display metric trends over time
 interface Props {
   data: MetricTrendPoint[];
 }

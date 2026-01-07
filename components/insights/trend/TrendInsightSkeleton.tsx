@@ -1,3 +1,4 @@
+// Skeleton component for TrendInsight
 export default function TrendInsightSkeleton() {
   return (
     <div className="space-y-2">

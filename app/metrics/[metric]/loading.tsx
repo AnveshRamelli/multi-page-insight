@@ -1,3 +1,4 @@
+// Loading component for the metric detail page
 export default function MetricLoading() {
   return (
     <div>

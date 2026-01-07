@@ -3,6 +3,7 @@ import { getAvailableMetrics } from "@/data/resolvers";
 import { Metric } from "@/data/types";
 
 export default async function MetricsPage() {
+  // Fetch the list of available metrics  
   const metrics: Metric[] = await getAvailableMetrics();
 
   return (

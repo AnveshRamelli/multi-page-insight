@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+// Error boundary for the metric detail page
 export default function MetricErrorPage() {
   return (
     <div>

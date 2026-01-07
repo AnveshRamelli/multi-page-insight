@@ -8,6 +8,7 @@ interface Props {
   data: MetricTrendPoint[];
 }
 
+// Client component to display trend insights
 export default function TrendInsight({ data, title }: Props) {
   if (!data.length) {
     return (

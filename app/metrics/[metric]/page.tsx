@@ -1,12 +1,16 @@
-import { getMetricTrend } from "@/data/resolvers";
-import { MetricKey, MetricTrendPoint, TimeGrain } from "@/data/types";
-import TrendInsight from "@/components/insights/trend/TrendInsight";
+import { MetricKey, TimeGrain } from "@/data/types";
 import GrainSelector from "@/components/controls/GrainSelector";
 import RangeSelector from "@/components/controls/RangeSelector";
 import Link from "next/link";
 import { Suspense } from "react";
 import TrendInsightSkeleton from "@/components/insights/trend/TrendInsightSkeleton";
 import TrendInsightServer from "@/components/insights/trend/TrendInsight.server";
+import {
+  validateGrain,
+  validateMetric,
+  validateRange,
+} from "@/utils/validators";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
@@ -22,12 +26,18 @@ export default async function MetricDetailPage({
   params,
   searchParams,
 }: PageProps) {
-  const { metric } = await params;
+  let { metric } = await params;
+  metric = validateMetric(metric)!;
+  if (!metric) {
+    return notFound();
+  }
   const sp = await searchParams;
 
-  const grain: TimeGrain = sp.grain ?? "weekly";
-  const range = Number(sp.range ?? 30);
+  // Validate and set defaults for grain and range
+  const grain = validateGrain(sp.grain);
+  const range = validateRange(sp.range);
 
+  // Calculate date range based on range (Not memoised as it is a server component and runs per request)
   const to = new Date();
   const from = new Date();
   from.setDate(to.getDate() - range);
@@ -49,7 +59,7 @@ export default async function MetricDetailPage({
       <p className="text-sm text-gray-600 mb-6">
         Trend over last {range} days ({grain})
       </p>
-
+      {/* Suspense for loading state while fetching Trend data */}
       <Suspense
         key={`${metric}-${grain}-${range}`}
         fallback={<TrendInsightSkeleton />}

@@ -20,7 +20,8 @@ export function validateGrain(grain?: string): TimeGrain {
 // Validate range and provide a default if invalid
 export function validateRange(range?: string): number {
   const parsed = Number(range);
-
+  
+  // Default to 30 if parsing fails or out of bounds
   if (!Number.isFinite(parsed)) return 30;
   if (parsed <= 0) return 30;
   if (parsed > 365) return 365;
