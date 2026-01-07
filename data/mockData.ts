@@ -1,5 +1,14 @@
-// Mock data for Trend insights
+import { Metric } from "./types";
 
+// Mock data for available metrics
+export const METRICS: Metric[] = [
+  { key: "revenue", label: "Revenue", description: "View revenue insights" },
+  { key: "orders", label: "Orders", description: "View order insights" },
+  { key: "active_users", label: "Active Users", description: "View active user insights" },
+  { key: "conversion_rate", label: "Conversion Rate", description: "View conversion rate insights" },
+];
+
+// Mock data for Trend insights
 export const REVENUE_TREND_DAILY = [
   { timestamp: "2025-01-01", value: 120 },
   { timestamp: "2025-01-02", value: 180 },

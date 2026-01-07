@@ -9,6 +9,14 @@ export type MetricKey =
   // Time grain definitions
 export type TimeGrain = "daily" | "weekly" | "monthly";
 
+// Metric definition structure
+export interface Metric {
+  key: MetricKey;
+  label: string;
+  description: string;
+}
+
+
 // Metric trend point structure
 export interface MetricTrendPoint {
   timestamp: string;
