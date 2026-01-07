@@ -19,12 +19,15 @@ export default async function TrendInsightServer({
   to,
   title,
 }: Props) {
-  const data: MetricTrendPoint[] = await getMetricTrend(
-    metric,
-    grain,
-    from,
-    to
-  );
-
-  return <TrendInsight data={data} title={title} />;
+  try {
+    const data: MetricTrendPoint[] = await getMetricTrend(
+      metric,
+      grain,
+      from,
+      to
+    );
+    return <TrendInsight data={data} title={title} />;
+  } catch (error) {
+    return <div>Error loading trend data.</div>;
+  }
 }
