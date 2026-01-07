@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="px-6 py-3 bg-gray-100 border-b border-gray-200 mb-8">
-          <p className="text-lg font-semibold">Multi-Page Insight</p>
+          <Link href="/" className="text-lg font-semibold">
+            Multi-Page Insight
+          </Link>
         </header>
         <main className="max-w-3xl mx-auto">{children}</main>
       </body>
