@@ -10,58 +10,58 @@ export const METRICS: Metric[] = [
 
 // Mock data for Trend insights
 export const REVENUE_TREND_DAILY = [
-  { timestamp: "2025-01-01", value: 120 },
-  { timestamp: "2025-01-02", value: 180 },
-  { timestamp: "2025-01-03", value: 150 },
-  { timestamp: "2025-01-04", value: 210 },
+  { date: "2025-01-01", value: 120 },
+  { date: "2025-01-02", value: 180 },
+  { date: "2025-01-03", value: 150 },
+  { date: "2025-01-04", value: 210 },
 ];
 
 export const REVENUE_TREND_WEEKLY = [
-  { timestamp: "2025-01-01", value: 980 },
-  { timestamp: "2025-01-08", value: 1120 },
-  { timestamp: "2025-01-15", value: 1040 },
+  { date: "2025-01-01", value: 980 },
+  { date: "2025-01-08", value: 1120 },
+  { date: "2025-01-15", value: 1040 },
 ];
 
 export const REVENUE_TREND_MONTHLY = [
-  { timestamp: "2025-01-01", value: 4200 },
-  { timestamp: "2025-02-01", value: 4600 },
+  { date: "2025-01-01", value: 4200 },
+  { date: "2025-02-01", value: 4600 },
 ];
 
 export const ORDERS_TREND_DAILY = [
-  { timestamp: "2025-01-01", value: 45 },
-  { timestamp: "2025-01-02", value: 60 },
-  { timestamp: "2025-01-03", value: 50 },
-  { timestamp: "2025-01-04", value: 70 },
+  { date: "2025-01-01", value: 45 },
+  { date: "2025-01-02", value: 60 },
+  { date: "2025-01-03", value: 50 },
+  { date: "2025-01-04", value: 70 },
 ];
 
 export const ORDERS_TREND_WEEKLY = [
-  { timestamp: "2025-01-01", value: 320 },
-  { timestamp: "2025-01-08", value: 410 },
-  { timestamp: "2025-01-15", value: 380 },
+  { date: "2025-01-01", value: 320 },
+  { date: "2025-01-08", value: 410 },
+  { date: "2025-01-15", value: 380 },
 ];
 export const ORDERS_TREND_MONTHLY = [
-  { timestamp: "2025-01-01", value: 1800 },
-  { timestamp: "2025-02-01", value: 2100 },
-  { timestamp: "2025-03-01", value: 2000 },
+  { date: "2025-01-01", value: 1800 },
+  { date: "2025-02-01", value: 2100 },
+  { date: "2025-03-01", value: 2000 },
 ];
 
 export const USERS_TREND_DAILY = [
-  { timestamp: "2025-01-01", value: 600 },
-  { timestamp: "2025-01-02", value: 750 },
-  { timestamp: "2025-01-03", value: 700 },
-  { timestamp: "2025-01-04", value: 800 },
+  { date: "2025-01-01", value: 600 },
+  { date: "2025-01-02", value: 750 },
+  { date: "2025-01-03", value: 700 },
+  { date: "2025-01-04", value: 800 },
 ];
 
 export const USERS_TREND_WEEKLY = [
-  { timestamp: "2025-01-01", value: 4200 },
-  { timestamp: "2025-01-08", value: 2500 },
-  { timestamp: "2025-01-15", value: 5400 },
+  { date: "2025-01-01", value: 4200 },
+  { date: "2025-01-08", value: 2500 },
+  { date: "2025-01-15", value: 5400 },
 ];
 
 export const USERS_TREND_MONTHLY = [
-  { timestamp: "2025-01-01", value: 16000 },
-  { timestamp: "2025-02-01", value: 18000 },
-  { timestamp: "2025-03-01", value: 17500 },
+  { date: "2025-01-01", value: 16000 },
+  { date: "2025-02-01", value: 18000 },
+  { date: "2025-03-01", value: 17500 },
 ];
 
 
@@ -73,7 +73,7 @@ export const REVENUE_CONTRIBUTORS = {
   dimensions: ["India", "USA", "Europe"],
   data: [
     {
-      timestamp: "2025-01-01",
+      date: "2025-01-01",
       contributions: {
         India: 420,
         USA: 310,
@@ -81,7 +81,7 @@ export const REVENUE_CONTRIBUTORS = {
       },
     },
     {
-      timestamp: "2025-01-08",
+      date: "2025-01-08",
       contributions: {
         India: 460,
         USA: 330,
@@ -96,7 +96,7 @@ export const ORDERS_CONTRIBUTORS = {
   dimensions: ["Web", "iOS", "Android"],
   data: [
     {
-      timestamp: "2025-01-01",
+      date: "2025-01-01",
       contributions: {
         Web: 180,
         iOS: 90,
@@ -104,7 +104,7 @@ export const ORDERS_CONTRIBUTORS = {
       },
     },
     {
-      timestamp: "2025-01-08",
+      date: "2025-01-08",
       contributions: {
         Web: 210,
         iOS: 120,
@@ -119,7 +119,7 @@ export const USERS_CONTRIBUTORS = {
   dimensions: ["Asia", "North America", "Europe"],
   data: [
     {
-      timestamp: "2025-01-01",
+      date: "2025-01-01",
       contributions: {
         Asia: 2600,
         "North America": 1600,
@@ -127,7 +127,7 @@ export const USERS_CONTRIBUTORS = {
       },
     },
     {
-      timestamp: "2025-01-08",
+      date: "2025-01-08",
       contributions: {
         Asia: 2800,
         "North America": 1700,

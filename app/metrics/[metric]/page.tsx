@@ -35,10 +35,13 @@ export default async function MetricDetailPage({
     from,
     to
   );
+  const title = metric.replace("_", " ").toUpperCase();
 
   return (
     <main className="max-w-3xl mx-auto p-6">
-      <p><Link href="/metrics">🔙</Link></p>
+      <p>
+        <Link href="/metrics">🔙</Link>
+      </p>
       <div className="flex gap-4 mb-6">
         <GrainSelector value={grain} />
         <RangeSelector value={range} />
@@ -50,7 +53,7 @@ export default async function MetricDetailPage({
         Trend over last {range} days ({grain})
       </p>
 
-      <TrendInsight data={trendData} title={metric.replace("_", " ")} />
+      <TrendInsight data={trendData} title={title} />
     </main>
   );
 }

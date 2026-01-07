@@ -1,5 +1,6 @@
 "use client";
 
+import { MetricTrendPoint } from "@/data/types";
 import {
   XAxis,
   YAxis,
@@ -11,10 +12,7 @@ import {
 } from "recharts";
 
 interface Props {
-  data: Array<{
-    date: string;
-    value: number;
-  }>;
+  data: MetricTrendPoint[];
 }
 
 export default function TrendChart({ data }: Props) {

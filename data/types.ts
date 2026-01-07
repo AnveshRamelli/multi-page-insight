@@ -19,7 +19,7 @@ export interface Metric {
 
 // Metric trend point structure
 export interface MetricTrendPoint {
-  timestamp: string;
+  date: string;
   value: number;
 }
 
