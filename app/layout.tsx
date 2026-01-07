@@ -31,7 +31,7 @@ export default function RootLayout({
         <header className="px-6 py-3 bg-gray-100 border-b border-gray-200 mb-8">
           <p className="text-lg font-semibold">Multi-Page Insight</p>
         </header>
-        {children}
+        <main className="max-w-3xl mx-auto">{children}</main>
       </body>
     </html>
   );
