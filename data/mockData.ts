@@ -27,17 +27,43 @@ export const REVENUE_TREND_MONTHLY = [
   { timestamp: "2025-02-01", value: 4600 },
 ];
 
+export const ORDERS_TREND_DAILY = [
+  { timestamp: "2025-01-01", value: 45 },
+  { timestamp: "2025-01-02", value: 60 },
+  { timestamp: "2025-01-03", value: 50 },
+  { timestamp: "2025-01-04", value: 70 },
+];
+
 export const ORDERS_TREND_WEEKLY = [
   { timestamp: "2025-01-01", value: 320 },
   { timestamp: "2025-01-08", value: 410 },
   { timestamp: "2025-01-15", value: 380 },
 ];
+export const ORDERS_TREND_MONTHLY = [
+  { timestamp: "2025-01-01", value: 1800 },
+  { timestamp: "2025-02-01", value: 2100 },
+  { timestamp: "2025-03-01", value: 2000 },
+];
+
+export const USERS_TREND_DAILY = [
+  { timestamp: "2025-01-01", value: 600 },
+  { timestamp: "2025-01-02", value: 750 },
+  { timestamp: "2025-01-03", value: 700 },
+  { timestamp: "2025-01-04", value: 800 },
+];
 
 export const USERS_TREND_WEEKLY = [
-  { timestamp: "2025-01-01", value: 5200 },
-  { timestamp: "2025-01-08", value: 5600 },
+  { timestamp: "2025-01-01", value: 4200 },
+  { timestamp: "2025-01-08", value: 2500 },
   { timestamp: "2025-01-15", value: 5400 },
 ];
+
+export const USERS_TREND_MONTHLY = [
+  { timestamp: "2025-01-01", value: 16000 },
+  { timestamp: "2025-02-01", value: 18000 },
+  { timestamp: "2025-03-01", value: 17500 },
+];
+
 
 
 // Mock data for Contributors insights

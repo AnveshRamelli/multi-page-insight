@@ -1,4 +1,4 @@
-import { METRICS, ORDERS_TREND_WEEKLY, REVENUE_TREND_DAILY, REVENUE_TREND_MONTHLY, REVENUE_TREND_WEEKLY, USERS_TREND_WEEKLY } from "./mockData";
+import { METRICS, ORDERS_TREND_DAILY, ORDERS_TREND_MONTHLY, REVENUE_TREND_DAILY, REVENUE_TREND_MONTHLY, REVENUE_TREND_WEEKLY, USERS_TREND_MONTHLY, USERS_TREND_DAILY, USERS_TREND_WEEKLY } from "./mockData";
 import { Metric, MetricKey, MetricTrendPoint, TimeGrain } from "./types";
 
 // Simulate network latency
@@ -40,11 +40,14 @@ export async function getMetricTrend(
   }
 
   if (metric === "orders") {
-    return ORDERS_TREND_WEEKLY;
+    if (grain === "daily") return ORDERS_TREND_DAILY;
+    if (grain === "monthly") return ORDERS_TREND_MONTHLY;
   }
 
   if (metric === "active_users") {
-    return USERS_TREND_WEEKLY;
+    if (grain === "daily") return USERS_TREND_DAILY;
+    if (grain === "weekly") return USERS_TREND_WEEKLY;
+    if (grain === "monthly") return USERS_TREND_MONTHLY;
   }
 
   return [];
