@@ -15,6 +15,7 @@ import {
   CONVERSION_RATE_TREND_MONTHLY,
 } from "./mockData";
 import { Metric, MetricKey, MetricTrendPoint, TimeGrain } from "./types";
+import { cache } from "react";
 
 // Simulate network latency
 function simulateLatency(delay = 1500): Promise<void> {
@@ -22,13 +23,15 @@ function simulateLatency(delay = 1500): Promise<void> {
 }
 
 // Fetch available metrics
-export async function getAvailableMetrics(): Promise<Metric[]> {
+export async function _getAvailableMetrics(): Promise<Metric[]> {
   await simulateLatency();
   return METRICS;
 }
+// Cache the available metrics data for performance
+export const getAvailableMetrics = cache(_getAvailableMetrics);
 
 // Fetch trend data for a specific metric
-export async function getMetricTrend(
+async function _getMetricTrend(
   metric: MetricKey,
   grain: TimeGrain,
   from: Date,
@@ -62,9 +65,11 @@ export async function getMetricTrend(
 
   return [];
 }
+// Cache the trend data for performance
+export const getMetricTrend = cache(_getMetricTrend);
 
 // Fetch contributions for a specific metric
-export async function getMetricContributors(
+async function _getMetricContributors(
   metric: MetricKey,
   grain: TimeGrain,
   from: Date,
@@ -88,3 +93,5 @@ export async function getMetricContributors(
     return CONVERSION_RATE_CONTRIBUTORS;
   }
 }
+// Cache the contributors data for performance
+export const getMetricContributors = cache(_getMetricContributors);
