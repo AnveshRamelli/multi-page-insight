@@ -4,10 +4,11 @@ import { useMemo } from "react";
 import { MetricTrendPoint } from "@/data/types";
 
 interface Props {
+    title: string;
   data: MetricTrendPoint[];
 }
 
-export default function TrendInsight({ data }: Props) {
+export default function TrendInsight({ data, title }: Props) {
   const rows = data.map((point: MetricTrendPoint) => ({
       date: new Date(point.timestamp).toLocaleDateString(),
       value: point.value,
@@ -24,7 +25,7 @@ export default function TrendInsight({ data }: Props) {
 
   return (
     <div>
-      <h2 className="text-lg font-medium mb-2">Trend</h2>
+      <h2 className="text-lg font-medium mb-2">{title}</h2>
 
       <table className="w-full text-sm border border-gray-200">
         <thead className="bg-gray-50">

@@ -7,6 +7,7 @@ export default async function MetricsPage() {
 
   return (
     <main className="max-w-3xl mx-auto p-6">
+      <p><Link href="/">🔙</Link></p>
       <h1 className="text-2xl font-semibold mb-4">
         Metrics
       </h1>
