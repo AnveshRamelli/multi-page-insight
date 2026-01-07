@@ -1,7 +1,7 @@
 "use client";
 
 import { MetricTrendPoint } from "@/data/types";
-import TrendChart from "../charts/TrendChart";
+import TrendChart from "../../charts/TrendChart";
 
 interface Props {
   title: string;

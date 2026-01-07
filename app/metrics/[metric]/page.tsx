@@ -1,9 +1,12 @@
 import { getMetricTrend } from "@/data/resolvers";
 import { MetricKey, MetricTrendPoint, TimeGrain } from "@/data/types";
-import TrendInsight from "@/components/insights/TrendInsight";
+import TrendInsight from "@/components/insights/trend/TrendInsight";
 import GrainSelector from "@/components/controls/GrainSelector";
 import RangeSelector from "@/components/controls/RangeSelector";
 import Link from "next/link";
+import { Suspense } from "react";
+import TrendInsightSkeleton from "@/components/insights/trend/TrendInsightSkeleton";
+import TrendInsightServer from "@/components/insights/trend/TrendInsight.server";
 
 interface PageProps {
   params: {
@@ -29,12 +32,6 @@ export default async function MetricDetailPage({
   const from = new Date();
   from.setDate(to.getDate() - range);
 
-  const trendData: MetricTrendPoint[] = await getMetricTrend(
-    metric,
-    grain,
-    from,
-    to
-  );
   const title = metric.replace("_", " ").toUpperCase();
 
   return (
@@ -53,7 +50,18 @@ export default async function MetricDetailPage({
         Trend over last {range} days ({grain})
       </p>
 
-      <TrendInsight data={trendData} title={title} />
+      <Suspense
+        key={`${metric}-${grain}-${range}`}
+        fallback={<TrendInsightSkeleton />}
+      >
+        <TrendInsightServer
+          metric={metric}
+          grain={grain}
+          from={from}
+          to={to}
+          title={title}
+        />
+      </Suspense>
     </main>
   );
 }
