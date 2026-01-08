@@ -17,6 +17,7 @@ interface Props {
 }
 
 export default function TrendChart({ data }: Props) {
+  if (!data.length) return null;
   return (
     <ResponsiveContainer width="100%" minHeight={300}>
       <AreaChart data={data}>

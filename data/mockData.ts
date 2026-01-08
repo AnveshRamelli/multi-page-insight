@@ -4,8 +4,16 @@ import { Metric } from "./types";
 export const METRICS: Metric[] = [
   { key: "revenue", label: "Revenue", description: "View revenue insights" },
   { key: "orders", label: "Orders", description: "View order insights" },
-  { key: "active_users", label: "Active Users", description: "View active user insights" },
-  { key: "conversion_rate", label: "Conversion Rate", description: "View conversion rate insights" },
+  {
+    key: "active_users",
+    label: "Active Users",
+    description: "View active user insights",
+  },
+  {
+    key: "conversion_rate",
+    label: "Conversion Rate",
+    description: "View conversion rate insights",
+  },
 ];
 
 // Mock data for Trend insights
@@ -64,75 +72,104 @@ export const USERS_TREND_MONTHLY = [
   { date: "2025-03-01", value: 17500 },
 ];
 
+export const CONVERSION_RATE_TREND_WEEKLY = [
+  { date: "2025-01-01", value: 2.5 },
+  { date: "2025-01-08", value: 2.8 },
+  { date: "2025-01-15", value: 2.6 },
+];
 
+export const CONVERSION_RATE_TREND_MONTHLY = [
+  { date: "2025-01-01", value: 2.5 },
+  { date: "2025-02-01", value: 2.8 },
+  { date: "2025-03-01", value: 2.6 },
+  { date: "2025-04-01", value: 2.9 },
+];
 
 // Mock data for Contributors insights
 
 /* Revenue by Region */
 export const REVENUE_CONTRIBUTORS = {
-  dimensions: ["India", "USA", "Europe"],
+  dimensions: [
+    { key: "india", label: "India", color: "#8884d8" },
+    { key: "usa", label: "USA", color: "#82ca9d" },
+    { key: "europe", label: "Europe", color: "#ffc658" },
+  ],
   data: [
     {
       date: "2025-01-01",
-      contributions: {
-        India: 420,
-        USA: 310,
-        Europe: 250,
-      },
+      india: 420,
+      usa: 310,
+      europe: 250,
     },
     {
       date: "2025-01-08",
-      contributions: {
-        India: 460,
-        USA: 330,
-        Europe: 290,
-      },
+      india: 460,
+      usa: 330,
+      europe: 290,
+    },
+    {
+      date: "2025-01-15",
+      india: 480,
+      usa: 350,
+      europe: 300,
     },
   ],
 };
 
 /* Orders by Platform */
 export const ORDERS_CONTRIBUTORS = {
-  dimensions: ["Web", "iOS", "Android"],
+  dimensions: [
+    { key: "web", label: "Web", color: "#1f77b4" },
+    { key: "ios", label: "iOS", color: "#ff7f0e" },
+    { key: "android", label: "Android", color: "#2ca02c" },
+  ],
   data: [
     {
       date: "2025-01-01",
-      contributions: {
-        Web: 180,
-        iOS: 90,
-        Android: 50,
-      },
+      web: 180,
+      ios: 90,
+      android: 50,
     },
     {
       date: "2025-01-08",
-      contributions: {
-        Web: 210,
-        iOS: 120,
-        Android: 80,
-      },
+      web: 210,
+      ios: 120,
+      android: 80,
     },
   ],
 };
 
-/* Users by Region */
-export const USERS_CONTRIBUTORS = {
-  dimensions: ["Asia", "North America", "Europe"],
+/* Users by Region - commented out to test error handling */
+// export const USERS_CONTRIBUTORS = {
+//   dimensions: [
+//     { key: "asia", label: "Asia", color: "#ff0000" },
+//     { key: "na", label: "North America", color: "#00ff00" },
+//     { key: "eu", label: "Europe", color: "#0000ff" },
+//   ],
+//   data: [
+//     {
+//       date: "2025-01-01",
+//       asia: 2600,
+//       "north america": 1600,
+//       europe: 1000,
+//     },
+//     {
+//       date: "2025-01-08",
+
+//       asia: 2800,
+//       "north america": 1700,
+//       europe: 1100,
+//     },
+//   ],
+// };
+
+export const CONVERSION_RATE_CONTRIBUTORS = {
+  dimensions: [
+    { key: "email", label: "Email", color: "#a83232" },
+    { key: "phone", label: "Phone", color: "#32a832" },
+  ],
   data: [
-    {
-      date: "2025-01-01",
-      contributions: {
-        Asia: 2600,
-        "North America": 1600,
-        Europe: 1000,
-      },
-    },
-    {
-      date: "2025-01-08",
-      contributions: {
-        Asia: 2800,
-        "North America": 1700,
-        Europe: 1100,
-      },
-    },
+    { date: "2025-01-01", email: 2.5, phone: 1.8 },
+    { date: "2025-01-08", email: 2.8, phone: 2.0 },
   ],
 };

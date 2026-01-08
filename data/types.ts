@@ -1,4 +1,3 @@
-
 // Metric definitions
 export type MetricKey =
   | "revenue"
@@ -6,7 +5,7 @@ export type MetricKey =
   | "active_users"
   | "conversion_rate";
 
-  // Time grain definitions
+// Time grain definitions
 export type TimeGrain = "daily" | "weekly" | "monthly";
 
 // Metric definition structure
@@ -16,7 +15,6 @@ export interface Metric {
   description: string;
 }
 
-
 // Metric trend point structure
 export interface MetricTrendPoint {
   date: string;
@@ -25,13 +23,18 @@ export interface MetricTrendPoint {
 
 // Metric contributor point structure
 export interface MetricContributorPoint {
-  timestamp: string;
-  contributions: Record<string, number>;
+  date: string;
+  [dimensionKey: string]: number | string;
+}
+
+export interface MetricContributorDimension {
+  key: string;
+  label: string;
+  color: string;
 }
 
 // Contributor response structure
 export interface MetricContributorsResponse {
-  dimensions: string[];
+  dimensions: MetricContributorDimension[];
   data: MetricContributorPoint[];
 }
-
