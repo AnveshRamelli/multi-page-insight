@@ -3,16 +3,15 @@ import GrainSelector from "@/components/controls/GrainSelector";
 import RangeSelector from "@/components/controls/RangeSelector";
 import Link from "next/link";
 import { Suspense } from "react";
-import TrendInsightServer from "@/components/insights/trend/TrendInsight.server";
 import {
   validateGrain,
   validateMetric,
   validateRange,
 } from "@/utils/validators";
+import TrendInsightServer from "@/components/insights/trend/TrendInsight.server";
+import ContributorInsightServer from "@/components/insights/contributor/ContributorInsight.server";
 import { notFound } from "next/navigation";
 import InsightSkeleton from "@/components/Loader/InsightSkeleton";
-import ContributorInsight from "@/components/insights/contributor/ContributorInsight";
-import ContributorInsightServer from "@/components/insights/contributor/ContributorInsight.server";
 
 interface PageProps {
   params: {

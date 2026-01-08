@@ -1,8 +1,6 @@
-// Loading component for the metrics page
+import InsightSkeleton from "@/components/Loader/InsightSkeleton";
+
+// Loading skeleton for the metrics page
 export default function MetricsLoading() {
-  return (
-    <div>
-      <h1>Loading metrics...</h1>
-    </div>
-  );
+  return <InsightSkeleton/>
 }
